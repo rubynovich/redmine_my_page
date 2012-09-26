@@ -1,0 +1,11 @@
+%h3
+  = l(:label_watched_issues)
+  = "(#{Issue.visible.watched_by(user.id).count})"
+  
+- watched_issues = Issue.visible.on_active_project.watched_by(user.id).with_limit(10).all(:order => "#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC", :include => [ :status, :project, :priority, :tracker ])
+
+= render :partial => 'list_simple', :locals => { :issues => watched_issues, :allows => [:author, :assigned_to] }
+
+- if watched_issues.length > 0
+  %p.small
+    = link_to l(:label_issue_view_all), :controller => 'issues', :action => 'index', :set_filter => 1, :watcher_id => 'me', :sort => 'priority:desc,updated_on:desc'
