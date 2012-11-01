@@ -1,10 +1,10 @@
 require 'redmine'
 
 Redmine::Plugin.register :redmine_my_page do
-  name 'Redmine My Page plugin'
+  name 'Моя страница'
   author 'Roman Shipiev'
-  description 'Redmine plugin, which makes "my page" more informative'
-  version '0.0.1'
+  description 'Модуль меняет поведение блоков "Созданные задачи", "Мои задачи", "Отслеживаемые задачи" на странице "Моя страница" (/my/page).'
+  version '0.0.2'
   url 'http://github.com/rubynovich/redmine_my_page'
   author_url 'http://roman.shipiev.me'
 end
