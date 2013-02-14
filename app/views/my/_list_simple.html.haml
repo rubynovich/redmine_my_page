@@ -1,5 +1,5 @@
 - if issues && issues.any?
-  - form_tag({}) do
+  %form
     %table.list.issues
       %thead
         %tr
@@ -12,7 +12,7 @@
           - if allows.include?(:assigned_to)
             %th=l(:field_assigned_to)
           %th=l(:field_start_date)
-          %th=l(:field_due_date)          
+          %th=l(:field_due_date)
       %tbody
         - issues.each do |issue|
           %tr.hascontextmenu{:id => "issue-#{h(issue.id)}", :class => [cycle('odd', 'even'), issue.css_classes].join(" ")}
@@ -34,7 +34,7 @@
             %td
               = format_date(issue.start_date)
             %td
-              = format_date(issue.due_date)              
+              = format_date(issue.due_date)
 - else
   %p.nodata
     = l(:label_no_data)
