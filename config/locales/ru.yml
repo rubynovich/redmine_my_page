@@ -1,5 +1,5 @@
 # Russian strings go here for Rails i18n
 ru:
-  issuesreportedbymewithstatus: "Решенные"
+  issuesreportedbymewithstatus: "Решенные задачи"
   label_solved_issue_status: "Статус решенных задач"
   label_solved_issues: "Решенные задачи"
