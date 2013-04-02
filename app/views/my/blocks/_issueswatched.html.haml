@@ -1,6 +1,6 @@
 %h3
   = l(:label_watched_issues)
-  = "(#{Issue.visible.watched_by(user.id).count})"
+  = "(#{Issue.open.visible.watched_by(user.id).count})"
 
 - watched_issues = Issue.visible.open.on_active_project.watched_by(user.id).all(:order => "#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC", :include => [ :status, :project, :priority, :tracker ], :limit => 10)
 
