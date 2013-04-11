@@ -1,5 +1,7 @@
 # English strings go here for Rails i18n
 en:
   issuesreportedbymewithstatus: "Solved issues"
+  issuesassignedtomewithdefaultstatus: "New issues"
   label_solved_issue_status: "Status for solved issues"
-  label_solved_issues: "Solved issues"
+  label_solved_issue_plural: "Solved issues"
+  label_new_issue_plural: "New issues"  

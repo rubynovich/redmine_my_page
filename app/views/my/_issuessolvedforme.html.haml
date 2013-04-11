@@ -1,5 +1,5 @@
 %h3
-  = l(:label_solved_issues)
+  = l(:label_solved_issue_plural)
   = "(#{Issue.visible.open.count(:conditions => { :author_id => User.current.id, :status_id => Setting[:plugin_redmine_my_page][:issue_status] })})"
 
 - status_id = Setting[:plugin_redmine_my_page][:issue_status]
