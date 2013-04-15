@@ -1,8 +1,10 @@
+- issues = Issue.open.visible.watched_by(User.current.id).on_active_project
+
 %h3
   = l(:label_watched_issues)
-  = "(#{Issue.open.visible.watched_by(user.id).count})"
+  = "(#{issues.count})"
 
-- watched_issues = Issue.visible.open.on_active_project.watched_by(user.id).all(:order => "#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC", :include => [ :status, :project, :priority, :tracker ], :limit => 10)
+- watched_issues = issues.limit(10).includes(:status, :project, :priority, :tracker).order("#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC").all
 
 = render :partial => 'list_simple', :locals => { :issues => watched_issues, :allows => [:author, :assigned_to] }
 

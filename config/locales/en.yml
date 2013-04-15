@@ -2,6 +2,12 @@
 en:
   issuesreportedbymewithstatus: "Solved issues"
   issuesassignedtomewithdefaultstatus: "New issues"
+  outdateissueswatched: "Outdate watched issues"
+  outdateissuesreportedbyme: "Outdate reported issues"
+  outdateissuesassignedtome: "Outdate issues assigned to me"
   label_solved_issue_status: "Status for solved issues"
   label_solved_issue_plural: "Solved issues"
-  label_new_issue_plural: "New issues"  
+  label_new_issue_plural: "New issues"
+  label_outdate_issues_assigned_to_me: "Outdate issues assigned to me"
+  label_outdate_issues_reported_by_me: "Outdate reported issues"
+  label_outdate_issues_watched_by_me: "Outdate watched issues"  

@@ -1,0 +1,15 @@
+- issues = Issue.visible.open.where(:assigned_to_id => ([User.current.id] + User.current.group_ids)).where("#{Issue.table_name}.due_date < ?", Date.today)
+
+%h3
+  = l(:label_outdate_issues_assigned_to_me)
+  = "(#{issues.count})"
+
+- assigned_issues = issues.limit(10).includes(:status, :project, :tracker, :priority).order("#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC").all
+
+= render :partial => 'list_simple', :locals => { :issues => assigned_issues, :allows => [:author] }
+
+%p.small
+  = link_to l(:label_issue_view_all), :controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => 'me', :due_date => "<t-1", :sort => 'priority:desc,updated_on:desc'
+
+- content_for :header_tags do
+  = auto_discovery_link_tag(:atom, {:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => 'me', :due_date => "<t-1", :format => 'atom', :key => User.current.rss_key}, {:title => l(:label_assigned_to_me_issues)})
