@@ -1,10 +1,8 @@
 # Russian strings go here for Rails i18n
 ru:
-  issuesassignedtomewithdefaultstatus: "Новые задачи"
   outdateissueswatched: "Просроченные отслеживаемые задачи"
   outdateissuesreportedbyme: "Просроченные созданные задачи"
   outdateissuesassignedtome: "Просроченные мои задачи"
-  label_new_issue_plural: "Новые задачи"
   label_outdate_issues_assigned_to_me: "Просроченные мои задачи"
   label_outdate_issues_reported_by_me: "Просроченные созданные задачи"
   label_outdate_issues_watched_by_me: "Просроченные отслеживаемые задачи"
