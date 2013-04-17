@@ -12,4 +12,4 @@
   = link_to l(:label_issue_view_all), :controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => 'me', :due_date => "<t-1", :sort => 'priority:desc,updated_on:desc'
 
 - content_for :header_tags do
-  = auto_discovery_link_tag(:atom, {:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => 'me', :due_date => "<t-1", :format => 'atom', :key => User.current.rss_key}, {:title => l(:label_assigned_to_me_issues)})
+  = auto_discovery_link_tag(:atom, {:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => 'me', :due_date => "<t-1", :format => 'atom', :key => User.current.rss_key}, {:title => l(:label_outdate_issues_assigned_to_me)})
